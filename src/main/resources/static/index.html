@@ -1,0 +1,10 @@
+﻿<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Cennik.ai</title><style>body{background:#0a0a0a;color:#00ffa3;font-family:monospace;text-align:center;padding-top:100px;}.logo{white-space:pre;font-size:8px;margin-bottom:20px;}input{padding:10px;width:300px;}button{padding:10px;background:#00ffa3;border:none;cursor:pointer;}</style></head>
+<body><div class="logo">
+  ______                      __       ___   __ 
+ /      |                    |  |     /   \ |  |
+|  ,----'  ____  ____   ____ |  |    /  ^  \|  |
+|  |      / __ \/ __ \ / __ \|  |   /  /_\  \  |
+|  ----.|  ___/  | |  |  | |  |  |  /  _____  \ |
+ \______| \____|__| |__|__| |__| |__/     \__\|__|</div>
+<input type="text" id="i"><button onclick="ask()">ПОИСК</button><div id="out"></div>
+<script>async function ask(){const r=await fetch('/api/search?query='+document.getElementById('i').value);const d=await r.json();document.getElementById('out').innerText=d.text;}</script></body></html>
