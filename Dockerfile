@@ -4,7 +4,7 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # Этап запуска
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk-focal
 COPY --from=build /target/cennik-app-1.0.0.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","app.jar"]
